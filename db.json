@@ -6,14 +6,60 @@
             "correctAnswer" : "true",
             "options" : ["true", "false"]
         },
-      {
-        "id": 2,
-        "title": "Post 2"
-      },
-      {
-        "id": 3,
-        "title": "Post 3"
-      }
+        {
+            "questionType" : "true_false",
+            "questionText" : "Java is a Programming Language",
+            "correctAnswer" : "true",
+            "options" : ["true", "false"]
+        },
+        {
+            "questionType" : "true_false",
+            "questionText" : "French people speak Python",
+            "correctAnswer" : "false",
+            "options" : ["true", "false"]
+        },
+        {
+            "questionType" : "true_false",
+            "questionText" : "One of the oldest programming languages is Fortran",
+            "correctAnswer" : "true",
+            "options" : ["true", "false"]
+        },
+        {
+            "questionType" : "true_false",
+            "questionText" : "Java is not an object oriented language",
+            "correctAnswer" : "false",
+            "options" : ["true", "false"]
+        },
+        {
+            "questionType" : "true_false",
+            "questionText" : "For loops and Recursions are the same thing",
+            "correctAnswer" : "false",
+            "options" : ["true", "false"]
+        },
+        {
+            "questionType" : "true_false",
+            "questionText" : "Python is one of the most popular languages",
+            "correctAnswer" : "true",
+            "options" : ["true", "false"]
+        },
+        {
+            "questionType" : "true_false",
+            "questionText" : "JavaScript is a front end development language",
+            "correctAnswer" : "true",
+            "options" : ["true", "false"]
+        },
+        {
+            "questionType" : "true_false",
+            "questionText" : "Java is a front end development language",
+            "correctAnswer" : "false",
+            "options" : ["true", "false"]
+        },
+        {
+            "questionType" : "true_false",
+            "questionText" : "HTML is also a front end development language",
+            "correctAnswer" : "true",
+            "options" : ["true", "false"]
+        }
     ],
     "comments": [
       {
@@ -28,6 +74,6 @@
       }
     ],
     "profile": {
-      "name": "typicode"
+      "name": "jeff"
     }
   }
