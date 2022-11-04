@@ -1,8 +1,0 @@
-[
-    {
-        "questionType" : "true_false",
-        "questionText" : "The earth is round",
-        "correctAnswer" : "true",
-        "options" : ["true", "false"]
-    }
-]
