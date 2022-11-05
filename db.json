@@ -1,5 +1,5 @@
-
-      {
+{
+      "questions":[{
         "questionType": "multiple_choice",
         "questionText": "Ashley needs to create a project for her resume to show to companies in about a month but doesn't know what to make, she was considering making a game or a quiz application or maybe even an AI, what do you think is best for her?",
         "correctAnswer": "How about creating your own personal website that has your resume in it. That would be one of the best ways to give the company a look at your coding skills and it shouldn't take too long",
@@ -69,4 +69,4 @@
       "options" : ["true", "false"],
       "response" : "It was also used along with JavaScript to setup this quiz :P"
   }
- 
+]}
