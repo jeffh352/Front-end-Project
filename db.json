@@ -68,5 +68,75 @@
       "correctAnswer" : "true",
       "options" : ["true", "false"],
       "response" : "It was also used along with JavaScript to setup this quiz :P"
+  },
+  {
+    "questionType" : "true_false",
+      "questionText" : "For loops are easily rewritten as while loops",
+      "correctAnswer" : "true",
+      "options" : ["true", "false"],
+      "response" : "For loops are interchangeable with while loops"
+  },
+  {
+    "questionType" : "true_false",
+      "questionText" : "While loops are easily rewritten as For loops",
+      "correctAnswer" : "false",
+      "options" : ["true", "false"],
+      "response" : "While loops are not as easily interchangeable with while loops in most languages"
+  },
+  {
+    "questionType" : "multiple_choice",
+      "questionText" : "int sum(int n){ if(n==0)return 0; else return n+sum(n-1);    What is the runtime complexity of this statement?",
+      "correctAnswer" : "O(n)",
+      "options" : ["O(n^2)", "O(logn)", "O(n)", "O(2^n)"],
+      "response" : "There are no recursions or anything of the sort and the algorithim runs at a solid O(n)"
+  },
+  {
+    "questionType" : "multiple_choice",
+      "questionText" : "Which is the worst time complexity",
+      "correctAnswer" : "O(n!)",
+      "options" : ["O(n!)", "O(n)", "O(logn)", "O(nlogn)"],
+      "response" : "O(n!) is the worst time complexity that a program can have"
+  },
+  {
+    "questionType" : "text_input",
+    "questionText" : "Write an int statement n that holds the value 9 in java(In the way of int n=[numbers]);",
+    "correctAnswer" : "int n=9;",
+    "answerFieldId" : "answer_to_question",
+    "response" : "The right code is int n=9;"
+  },
+  {
+    "questionType" : "multiple_choice",
+      "questionText" : "Which is the best time complexity out of all the options",
+      "correctAnswer" : "O(n)",
+      "options" : ["O(n!)", "O(n)", "O(logn^2)", "O(nlogn)"],
+      "response" : "O(n) is the second best time complexity that a program can have"
+  },
+  {
+    "questionType" : "multiple_choice",
+      "questionText" : "Which is the best time complexity out of all the options",
+      "correctAnswer" : "Both O(1) and O(logn)",
+      "options" : ["O(1)", "O(n)", "O(logn)", "Both O(1) and O(logn)"],
+      "response" : "O(1) is the best time complexity that a program can have along with O(logn)"
+  },
+  {
+    "questionType" : "true_false",
+      "questionText" : "O(log n) is better and faster than O(n)",
+      "correctAnswer" : "true",
+      "options" : ["true", "false"],
+      "response" : "O(log n) is one of the fastes runtimes"
+  },
+  {
+    "questionType" : "true_false",
+      "questionText" : "O(log n) and O(1) run almost the same in terms of speed",
+      "correctAnswer" : "true",
+      "options" : ["true", "false"],
+      "response" : "O(log n) and O(1) are both excellent runtimes and almost run at the same speed"
+  },
+  {
+    "questionType" : "true_false",
+      "questionText" : "Big O notation is one of the best ways to determine how fast a program can run",
+      "correctAnswer" : "true",
+      "options" : ["true", "false"],
+      "response" : "Big O notation is widely amongst all programmers to determine runtime complexities"
   }
 ]}
