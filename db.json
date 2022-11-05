@@ -1,79 +1,78 @@
 {
-    "questions": [
-        {
-            "questionType" : "true_false",
-            "questionText" : "The earth is round",
-            "correctAnswer" : "true",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "Java is a Programming Language",
-            "correctAnswer" : "true",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "French people speak Python",
-            "correctAnswer" : "false",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "One of the oldest programming languages is Fortran",
-            "correctAnswer" : "true",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "Java is not an object oriented language",
-            "correctAnswer" : "false",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "For loops and Recursions are the same thing",
-            "correctAnswer" : "false",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "Python is one of the most popular languages",
-            "correctAnswer" : "true",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "JavaScript is a front end development language",
-            "correctAnswer" : "true",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "Java is a front end development language",
-            "correctAnswer" : "false",
-            "options" : ["true", "false"]
-        },
-        {
-            "questionType" : "true_false",
-            "questionText" : "HTML is also a front end development language",
-            "correctAnswer" : "true",
-            "options" : ["true", "false"]
-        }
-    ],
-    "comments": [
+    "accounts":[
       {
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-      },
-      {
-        "id": 2,
-        "body": "some comment",
-        "postId": 1
+        "name":""
       }
     ],
-    "profile": {
-      "name": "jeff"
-    }
+    "questions":[
+  {
+      "questionType" : "true_false",
+      "questionText" : "The earth is round",
+      "correctAnswer" : "true",
+      "options" : ["true", "false"],
+      "response" : "The world is scientifically proven round"
+  },
+  {
+      "questionType" : "text_input",
+      "questionText" : "Is Java a popular programming language?",
+      "correctAnswer" : "Yes",
+      "answerFieldId" : "answer_to_question",
+      "response" : "Java is one of the most popular languages in the world"
+  },
+  {
+      "questionType" : "true_false",
+      "questionText" : "French people speak Python",
+      "correctAnswer" : "false",
+      "options" : ["true", "false"],
+      "response" : "Python is a programming language"
+  },
+  {
+      "questionType" : "multiple_choice",
+      "questionText" : "What is one of the oldest Programming Languages",
+      "correctAnswer" : "Fortran",
+      "options" : ["Java", "Python", "Fortran", "HTML"],
+      "response" : "Fortran was released back in 1957"
+  },
+  {
+      "questionType" : "true_false",
+      "questionText" : "Java is not an object oriented language",
+      "correctAnswer" : "false",
+      "options" : ["true", "false"],
+      "response" : "Java uses objects which can have multiple classes in them and be called back"
+  },
+  {
+      "questionType" : "true_false",
+      "questionText" : "For loops and Recursions are the same thing",
+      "correctAnswer" : "false",
+      "options" : ["true", "false"],
+      "response" : "For loops keep repeating themselves until an integer is reached, recursions call themsevles back repeatedly"
+  },
+  {
+      "questionType" : "true_false",
+      "questionText" : "Python is one of the most popular languages",
+      "correctAnswer" : "true",
+      "options" : ["true", "false"],
+      "response" : "48.07% of programmers use python"
+  },
+  {
+      "questionType" : "true_false",
+      "questionText" : "JavaScript is a front end development language",
+      "correctAnswer" : "true",
+      "options" : ["true", "false"],
+      "response" : "How do you think these questions and responses keep coming up"
+  },
+  {
+      "questionType" : "true_false",
+      "questionText" : "Java is a front end development language",
+      "correctAnswer" : "false",
+      "options" : ["true", "false"],
+      "response" : "It is used for back end development"
+  },
+  {
+      "questionType" : "true_false",
+      "questionText" : "HTML is also a front end development language",
+      "correctAnswer" : "true",
+      "options" : ["true", "false"],
+      "response" : "It was also used along with JavaScript to setup this quiz :P"
   }
+  ]}

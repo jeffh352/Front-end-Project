@@ -1,72 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-    <script src="handlebars.js"></script>
-</head>
-<body>
-    <script type="text/x-handlebars-template" id="template">
-        {{! this is comment}}
-        <h1>{{title}}</h1>
-        <ol>
-            {{#each list}}
-            <li>{{this.name}}</li>
-            <input type="checkbox" id="True" name="True" value="right">
-            <label for="True">True</label>
-            <input type="checkbox" id="False" name="False" value="wrong">
-            <label for="False">False</label>
-            {{/each}}
+<!-- index.html  main page of our SPA-->
+<html>
+  <head>
+    <!-- include bootstap dependencies -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 
-            {{#each list2}}
-            <li>{{this.name}}</li>
-            <input type="checkbox" id="True" name="True" value="right">
-            <label for="True">A</label>
-            <input type="checkbox" id="False" name="False" value="wrong">
-            <label for="False">B</label>
-            <input type="checkbox" id="True" name="True" value="right">
-            <label for="True2">C</label>
-            <input type="checkbox" id="False" name="False" value="wrong">
-            <label for="False2">D</label>
-            {{/each}}
+    <!-- Include handlebars library -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-            {{#each list3}}
-            <li>{{this.name}}</li>
-            <input type="text">
-            {{/each}}
+    <!-- Script for our application  -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="handlebars&API.js"> </script>
 
-            {{#each list4}}
-            <li>{{this.name}}</li>
-            <input type="checkbox" id="True" name="True" value="right">
-            <label for="True">True</label>
-            <input type="checkbox" id="False" name="False" value="wrong">
-            <label for="False">False</label>
-            {{/each}}
-        </ol>
-        <p>{{footer}}</p>
-    </script>
-    <div id="output">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Jeffrey Hernandez Quiz App</a>
+      </div>
+    </nav>
+
+    <div id="widget_view" style="margin:50px">
 
     </div>
+  </body>
+
+
+<!--
+  Specify all possible view templates
+  These views can go on a separate file (i.e., views.html) and linked to the current html
+  files using the tag:
+
+    <link href="views.html" rel="import">
+
+  However, this will only work if the views.html file is loaded from a server (not from the file system.)
+ -->
+
+
+  <script id="intro_view" type="text/x-handlebars-template">
     <div class="container">
-        <p>test</p>
-        <h2 id="question">What is the question?</h2>
+        <div class="row">
+          <span>Please enter your name: </span>
+          <input type="text" id="name">
+        </div>
+        <div class="row">
+          <div class="col">
+            <div>
+              <span>Select a quiz to begin</span>
+              <button class="btn btn-danger float-right" data-action="{{this.action}}">{{this.action}}</button>
+              <button class="btn btn-danger float-right" data-server="quizServer2" data-action="quiz2">Quiz 2</button>
+            </div>
+          </div>
+        </div>
     </div>
-    <p>Welcome to the Quiz Project</p>
-    <p>Enter your name:</p>
-    <input id="name">
-    <button onclick="quiz1()">Quiz 1</button>
-    <button onclick="quiz2()">Quiz 2</button>
-    
-</body>
-<script>
-    function request(){
-        fetch('https://my-json-server.typicode.com/typicode/demo/posts')
-        .then(response => response.json())
-        .then(json => console.log(json))
-    }
+  </script>
+
+  <script id="question_view_true_false" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="row">
+          <div class="col">
+            <div>
+              <span style="text-align:center"> {{this.questionText}} </span>
+              <button class="btn btn-primary pull-left" data-action="answer" data-answer="{{this.options.[0]}}">{{this.options.[0]}}</button>
+              <button class="btn btn-danger float-right" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+  <script id="question_view_multiple_choice" type="text/x-handlebars-template">
+    <div class="mc_container">
+      <div class="row">
+          <div class="col1">
+            <div id = mc-questions-container>
+              <span id="mt_choice_question" style="text-align:center"> {{this.questionText}}</span>
+            </div>
+          <div class="col2">
+            <button class="btn btn-primary pull-left" data-action="answer" data-answer="{{this.options.[0]}}">{{this.options.[0]}}</button>
+            <button class="btn btn-danger float-right" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
+          </div>
+          <div class="col3">
+            <button class="btn btn-success pull-left" data-action="answer" data-answer="{{this.options.[2]}}">{{this.options.[2]}}</button>
+            <button class="btn btn-warning float-right" data-action="answer" data-answer="{{this.options.[3]}}">{{this.options.[3]}}</button>
+          </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+<script id="question_view_mutli_text_input" type="text/x-handlebars-template">
+  <div class="mti_container">
+    <div class="row">
+        <div class="col">
+          <div>
+            <span style="text-align:center"> {{this.questionText}} </span>
+            <input type="text" id="{{this.answerFieldId[0]}}" name="answer0">
+            <input type="text" id="{{this.answerFieldId[1]}}" name="answer1">
+            <input type="text" id="{{this.answerFieldId[2]}}" name="answer2">
+            <input type="text" id="{{this.answerFieldId[3]}}" name="answer3"><br><br>
+            <button class="btn btn-success float-right" data-action="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </script>
+
+  <script id="question_view_text_input" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="row">
+          <div class="col">
+            <div>
+              <span style="text-align:center"> {{this.questionText}} </span>
+              <input type="text" id="{{this.answerFieldId}}" name="answer"><br><br>
+              <button class="btn btn-danger float-right" data-action="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+  <script id="feedback_view" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="row">
+          <div class="col">
+            <div>
+              <span id="feedback_string">Incorrect: </span>
+              <span id="reason">{{this.response}}</span>
+              <button class="btn btn-danger float-right" data-action="ok"> OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+  <script id="good_job_view" type="text/x-handlebars-template">
+    <span>Good Job!</span>
+  </script>
+
+  <script id="end_view" type="text/x-handlebars-template">
+      <div class="container">
+        <div class="row">
+            <div class="col">
+              <div>
+                <span> Thank you for taking the quiz:</span>
+                <span id="user_score"> Congratulations{{this.name}}!! Your score is {{this.score}}</span>
+                <button class="btn btn-danger float-right" data-action="start_again">Start Again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </script>
 </html>
