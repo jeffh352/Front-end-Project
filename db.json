@@ -69,26 +69,5 @@
       "correctAnswer" : "true",
       "options" : ["true", "false"],
       "response" : "It was also used along with JavaScript to setup this quiz :P"
-  },
-  {
-    "questionType" : "true_false",
-      "questionText" : "For loops are easily rewritten as while loops",
-      "correctAnswer" : "true",
-      "options" : ["true", "false"],
-      "response" : "For loops are interchangeable with while loops"
-  },
-  {
-    "questionType" : "true_false",
-      "questionText" : "While loops are easily rewritten as For loops",
-      "correctAnswer" : "false",
-      "options" : ["true", "false"],
-      "response" : "While loops are not as easily interchangeable with while loops in most languages"
-  },
-  {
-    "questionType" : "multiple_choice",
-      "questionText" : "int sum(int n){ if(n==0)return 0; else return n+sum(n-1);    What is the runtime complexity of this statement?",
-      "correctAnswer" : "O(n)",
-      "options" : ["O(n^2)", "O(logn)", "O(n)", "O(2^n)"],
-      "response" : "There are no recursions or anything of the sort and the algorithim runs at a solid O(n)"
   }
   ]}
