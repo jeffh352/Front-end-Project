@@ -51,7 +51,7 @@
             <div>
               <span>Select a quiz to begin</span>
               <button class="btn btn-danger float-right" data-action="{{this.action}}">{{this.action}}</button>
-              <button class="btn btn-danger float-right" data-server="quizServer2" data-action="quiz2">Quiz 2</button>
+              <button class="btn btn-danger float-right" data-server="quizServer2" data-action="Quiz 2">Quiz 2</button>
             </div>
           </div>
         </div>
@@ -68,7 +68,9 @@
               <button class="btn btn-danger float-right" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
             </div>
           </div>
+          
         </div>
+        <span>{{this.name}}:{{this.correctAnswers}}</span>
       </div>
   </script>
 
@@ -89,6 +91,7 @@
           </div>
           </div>
         </div>
+        <span>{{this.name}}:{{this.correctAnswers}}</span>
       </div>
   </script>
 
@@ -106,6 +109,7 @@
           </div>
         </div>
       </div>
+      <span>{{this.name}}:{{this.correctAnswers}}</span>
     </div>
 </script>
 
@@ -120,6 +124,7 @@
             </div>
           </div>
         </div>
+        <span>{{this.name}}:{{this.correctAnswers}}</span>
       </div>
   </script>
 
@@ -130,7 +135,7 @@
             <div>
               <span id="feedback_string">Incorrect: </span>
               <span id="reason">{{this.response}}</span>
-              <button class="btn btn-danger float-right" data-action="ok"> OK</button>
+              <button class="btn btn-danger float-right" data-action="Got it">Got it</button>
             </div>
           </div>
         </div>
@@ -140,14 +145,30 @@
     <span>Good Job!</span>
   </script>
 
+  <script id="fail_end_view" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="row">
+          <div class="col">
+            <div>
+              <span> Thank you for taking the quiz:</span>
+              <span id="user_score"> Sorry {{this.name}} you have failed. Your score is {{this.correctAnswers}}%</span>
+              <button class="btn btn-danger float-right" data-action="start_again">Main menu</button>
+              <button class="btn btn-danger float-right" data-action="{{this.current_quiz}}">Retake Quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
   <script id="end_view" type="text/x-handlebars-template">
       <div class="container">
         <div class="row">
             <div class="col">
               <div>
                 <span> Thank you for taking the quiz:</span>
-                <span id="user_score"> Congratulations{{this.name}}!! Your score is {{this.score}}</span>
-                <button class="btn btn-danger float-right" data-action="start_again">Start Again</button>
+                <span id="user_score"> Congratulations {{this.name}}!! Your score is {{this.correctAnswers}}%</span>
+                <button class="btn btn-danger float-right" data-action="start_again">Main menu</button>
+                <button class="btn btn-danger float-right" data-action="{{this.current_quiz}}">Retake Quiz</button>
               </div>
             </div>
           </div>
