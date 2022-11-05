@@ -1,5 +1,4 @@
-{
-    "questions":[
+
       {
         "questionType": "multiple_choice",
         "questionText": "Ashley needs to create a project for her resume to show to companies in about a month but doesn't know what to make, she was considering making a game or a quiz application or maybe even an AI, what do you think is best for her?",
@@ -70,4 +69,4 @@
       "options" : ["true", "false"],
       "response" : "It was also used along with JavaScript to setup this quiz :P"
   }
-  ]}
+ 
