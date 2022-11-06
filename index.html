@@ -49,7 +49,7 @@
         <div class="row">
           <div class="col">
             <div>
-              <span>Select a quiz to begin</span>
+              <span>Select a quiz to begin: </span>
               <button class="btn btn-danger float-right" data-action="{{this.action}}">{{this.action}}</button>
               <button class="btn btn-danger float-right" data-server="quizServer2" data-action="Quiz 2">Quiz 2</button>
             </div>
@@ -64,11 +64,14 @@
           <div class="col">
             <div>
               <span style="text-align:center"> {{this.questionText}} </span>
-              <button class="btn btn-primary pull-left" data-action="answer" data-answer="{{this.options.[0]}}">{{this.options.[0]}}</button>
-              <button class="btn btn-danger float-right" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
+              <div>
+                <button class="btn btn-primary" data-action="answer" data-answer="{{this.options.[0]}}">{{this.options.[0]}}</button>
+                <div>
+                  <button class="btn btn-danger" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
+                </div>
+              </div>
             </div>
           </div>
-          
         </div>
         <span>{{this.name}}:{{this.correctAnswers}}</span>
       </div>
@@ -101,10 +104,18 @@
         <div class="col">
           <div>
             <span style="text-align:center"> {{this.questionText}} </span>
-            <input type="text" id="{{this.answerFieldId[0]}}" name="answer0">
-            <input type="text" id="{{this.answerFieldId[1]}}" name="answer1">
-            <input type="text" id="{{this.answerFieldId[2]}}" name="answer2">
-            <input type="text" id="{{this.answerFieldId[3]}}" name="answer3"><br><br>
+            <div>
+              <input type="text" id="{{this.answerFieldId[0]}}" name="answer0">
+            </div>
+            <div>
+              <input type="text" id="{{this.answerFieldId[1]}}" name="answer1">
+            </div>
+            <div>
+              <input type="text" id="{{this.answerFieldId[2]}}" name="answer2">
+            </div>
+            <div>
+              <input type="text" id="{{this.answerFieldId[3]}}" name="answer3"><br><br>
+            </div>
             <button class="btn btn-success float-right" data-action="submit">Submit</button>
           </div>
         </div>
